@@ -44,6 +44,7 @@ export const IconBody = styled.div`
   padding: 10px;
   background-color: black;
   border-radius: 10px;
+  cursor: pointer;
 `
 
 export const Icon = styled.div`
