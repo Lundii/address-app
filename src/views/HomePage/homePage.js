@@ -1,11 +1,12 @@
 import React from 'react';
-import { HomePageContainer  } from './styledHomePage';
+import { HomePageContainer, BackgroundImage  } from './styledHomePage';
 import Header from '../../components/header';
 import HomeComponents from '../../components/homeComponents';
 
 const HomePage = () => {
   return (
     <HomePageContainer>
+      <BackgroundImage />
       <Header />
       <HomeComponents />
     </HomePageContainer>

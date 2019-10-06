@@ -1,15 +1,23 @@
 import React from 'react';
-import { HeaderContainer, Logo } from './styledheader'
+import { HeaderContainer, Logo, Logo1, SearchItem1, SearchInput1, Icon1, IconBody1 } from './styledheader'
 
 const Header = (props) => {
 
   return (
     <HeaderContainer>
-      <Logo>
-        <h3>NL Geodata</h3>
-      </Logo>
+      <Logo>NL Geodata</Logo>
     </HeaderContainer>
   );
+
+  // return (
+  //   <HeaderContainer>
+  //     <Logo1>NL Geodata</Logo1>
+  //     <SearchItem1>
+  //       <SearchInput1 placeholder="enter search word" />
+  //         <Icon1 />
+  //     </SearchItem1>
+  //   </HeaderContainer>
+  // )
 };
 
 export default Header;

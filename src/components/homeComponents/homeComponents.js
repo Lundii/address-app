@@ -1,11 +1,19 @@
 import React from 'react';
-import {HomeContainer, SearchInput} from './styedHome';
+import {HomeContainer, SearchInput, Items, Label, SearchItem, IconBody, Icon} from './styedHome';
 
 const HomeComponent = () => {
 
   return (
     <HomeContainer>
-      <SearchInput />
+    <Items>
+      <Label>Search for addresses</Label>
+      <SearchItem>
+        <SearchInput placeholder="enter search word" />
+        <IconBody>
+          <Icon />
+        </IconBody>
+      </SearchItem>
+    </Items>
     </HomeContainer>
   )
 };
