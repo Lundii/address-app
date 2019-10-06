@@ -3,12 +3,12 @@ import { SearchItem, SearchInput, Icon, IconBody} from '../../components/homeCom
 
 export const HeaderContainer = styled.div`
   height: 50px;
-  ${'' /* height: 38px; */}
+  height: ${props => props.home ? '50px' : '38px' };
   width: 100%;
   padding: 1px;
   box-sizing: border-box;
   display: flex;
-  ${'' /* background-color: #262626 */}
+  background-color: ${props => props.home ? 'rgba(0,0,0,0)' : '#262626'};
 `
 
 export const Logo = styled.h4`

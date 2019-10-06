@@ -6,3 +6,14 @@ export const SearchContainer = styled.div`
   background-color: white;
 `
 
+export const SearchItems = styled.div`
+  height: 88%;
+  width: 100%;
+  overflow-y: scroll;
+`
+
+export const Loading = styled.label `
+  font-family: 'Bitter', serif;
+  margin: 12px;
+`
+

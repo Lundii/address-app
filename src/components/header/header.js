@@ -1,23 +1,26 @@
 import React from 'react';
 import { HeaderContainer, Logo, Logo1, SearchItem1, SearchInput1, Icon1, IconBody1 } from './styledheader'
 
-const Header = (props) => {
+const Header = ({path}) => {
 
-  return (
-    <HeaderContainer>
-      <Logo>NL Geodata</Logo>
-    </HeaderContainer>
-  );
-
-  // return (
-  //   <HeaderContainer>
-  //     <Logo1>NL Geodata</Logo1>
-  //     <SearchItem1>
-  //       <SearchInput1 placeholder="enter search word" />
-  //         <Icon1 />
-  //     </SearchItem1>
-  //   </HeaderContainer>
-  // )
+  if(path === 'search') {
+    return (
+      <HeaderContainer>
+        <Logo1>NL Geodata</Logo1>
+        <SearchItem1>
+          <SearchInput1 placeholder="enter search word" />
+            <Icon1 />
+        </SearchItem1>
+      </HeaderContainer>
+    )
+  }
+  else {
+    return (
+      <HeaderContainer home>
+        <Logo>NL Geodata</Logo>
+      </HeaderContainer>
+    );
+  }
 };
 
 export default Header;
