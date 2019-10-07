@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/address-app/static/js/main.96f82ff5.chunk.js",
-    "main.js.map": "/address-app/static/js/main.96f82ff5.chunk.js.map",
+    "main.js": "/address-app/static/js/main.6a37f49a.chunk.js",
+    "main.js.map": "/address-app/static/js/main.6a37f49a.chunk.js.map",
     "runtime-main.js": "/address-app/static/js/runtime-main.926ab99b.js",
     "runtime-main.js.map": "/address-app/static/js/runtime-main.926ab99b.js.map",
-    "static/js/2.1f1a2304.chunk.js": "/address-app/static/js/2.1f1a2304.chunk.js",
-    "static/js/2.1f1a2304.chunk.js.map": "/address-app/static/js/2.1f1a2304.chunk.js.map",
+    "static/js/2.188b68d8.chunk.js": "/address-app/static/js/2.188b68d8.chunk.js",
+    "static/js/2.188b68d8.chunk.js.map": "/address-app/static/js/2.188b68d8.chunk.js.map",
     "index.html": "/address-app/index.html",
-    "precache-manifest.c75662c00f98939476986d064182e798.js": "/address-app/precache-manifest.c75662c00f98939476986d064182e798.js",
+    "precache-manifest.81721301c7db8f519e07e4e13c353c70.js": "/address-app/precache-manifest.81721301c7db8f519e07e4e13c353c70.js",
     "service-worker.js": "/address-app/service-worker.js",
     "static/media/mapimg4.jpg": "/address-app/static/media/mapimg4.36e2c096.jpg",
     "static/media/mapimg5.png": "/address-app/static/media/mapimg5.5de1602a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.926ab99b.js",
-    "static/js/2.1f1a2304.chunk.js",
-    "static/js/main.96f82ff5.chunk.js"
+    "static/js/2.188b68d8.chunk.js",
+    "static/js/main.6a37f49a.chunk.js"
   ]
 }
