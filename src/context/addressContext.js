@@ -8,7 +8,9 @@ export const AddressProvider = (props) => {
     queryResult: {},
     details: {},
     page: 1,
-    itemsPerPage: 20
+    itemsPerPage: 20,
+    totalPages: 1,
+    error: ''
   });
 
   return (
