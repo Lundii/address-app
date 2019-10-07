@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/address-app/static/js/main.bd5b9d8a.chunk.js",
+    "main.js.map": "/address-app/static/js/main.bd5b9d8a.chunk.js.map",
+    "runtime-main.js": "/address-app/static/js/runtime-main.926ab99b.js",
+    "runtime-main.js.map": "/address-app/static/js/runtime-main.926ab99b.js.map",
+    "static/js/2.0728206b.chunk.js": "/address-app/static/js/2.0728206b.chunk.js",
+    "static/js/2.0728206b.chunk.js.map": "/address-app/static/js/2.0728206b.chunk.js.map",
+    "index.html": "/address-app/index.html",
+    "precache-manifest.d4cd168d485fe384dfa12c20ecbbbcc2.js": "/address-app/precache-manifest.d4cd168d485fe384dfa12c20ecbbbcc2.js",
+    "service-worker.js": "/address-app/service-worker.js",
+    "static/media/mapimg4.jpg": "/address-app/static/media/mapimg4.36e2c096.jpg",
+    "static/media/mapimg5.png": "/address-app/static/media/mapimg5.5de1602a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.926ab99b.js",
+    "static/js/2.0728206b.chunk.js",
+    "static/js/main.bd5b9d8a.chunk.js"
+  ]
+}
