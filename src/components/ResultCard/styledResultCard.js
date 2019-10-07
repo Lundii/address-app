@@ -17,6 +17,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
+  cursor: pointer;
 `
 
 export const Street = styled.label`

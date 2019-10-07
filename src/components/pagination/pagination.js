@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useEffect, useContext } from 'react';
 import { AddressContext } from '../../context/addressContext';
+import { getSearchResults } from '../../utils';
 import { PaginationContainer, Label, Label2, Label3, Label4, InputContainer, ItemsPerPage} from './styledPagination';
 
 
@@ -9,23 +11,30 @@ const Pagination = () => {
   const [addressData, updateAddressData] = useContext(AddressContext);
 
   const {searchQuery, queryResult, page, itemsPerPage} = addressData;
-  const totalPages = Math.floor(queryResult.numFound/itemsPerPage)
+  const totalPages = Math.ceil(queryResult.numFound/itemsPerPage);
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(page);
-      console.log(queryResult.numFound);
-      const response = await fetch(`https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=type:adres&q=${searchQuery}&start=${page}&rows=${itemsPerPage}&fq=*:*`);
-      const addresses = await response.json();
-      console.log(addresses);
-      updateAddressData(prevState => ({...prevState, queryResult: {...addresses.response}}));
+      getSearchResults(addressData, updateAddressData);
     }
     fetchData();
   }, [page, itemsPerPage])
 
   const handleChange = async (e, field) => {
+    const { value } = e.target;
+
+    updateAddressData(prevState => ({ ...prevState, error: ''}));
     e.persist();
-    updateAddressData(prevState => ({ ...prevState, [`${field}`]: e.target.value, queryResult: {}}));
+    if (field === 'itemsPerPage' && value < 10) {
+      return updateAddressData(prevState => ({ ...prevState, error: "Items per page must be at least 10"}));
+    }
+    if (field === 'itemsPerPage' && value > totalPages) {
+      return updateAddressData(prevState => ({ ...prevState, error: "Exceeded the total amount of pages"}));
+    }
+    if (field === 'page' && value < 1) {
+      return updateAddressData(prevState => ({ ...prevState, error: "Page must be at least 1"}));
+    }
+    updateAddressData(prevState => ({ ...prevState, [`${field}`]: value, queryResult: {}}));
     e.preventDefault();
   };
 

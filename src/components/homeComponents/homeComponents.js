@@ -1,25 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { AddressContext } from '../../context/addressContext';
+import { getSearchResults, updateSearchQuery} from '../../utils'
 import {HomeContainer, SearchInput, Items, Label, SearchItem, IconBody, Icon} from './styedHome';
 
-const HomeComponent = (props) => {
+const HomeComponent = () => {
    
   const [addressData, updateAddressData] = useContext(AddressContext);
   
-  const { searchQuery } = addressData;
-
-  const updateSearchQuery = (e) => {
-    const { value } = e.target;
-    updateAddressData(prevState => ({...prevState, searchQuery: value}))
-    e.preventDefault();
-  };
-
-  const getSearchResults = async () => {
-    const response = await fetch(`https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=type:adres&q=${searchQuery}&start=0&rows=20&fq=*:*`);
-    const addresses = await response.json();
-    updateAddressData(prevState => ({...prevState, queryResult: {...addresses.response}}));
-  }
   return (
     <HomeContainer>
     <Items>
@@ -27,9 +15,9 @@ const HomeComponent = (props) => {
       <SearchItem>
         <SearchInput 
           placeholder="enter search word" 
-          onChange={(e) => {updateSearchQuery(e)}}
+          onChange={(e) => {updateSearchQuery(e, updateAddressData)}}
         />
-        <Link to="/search"><IconBody onClick={() => {getSearchResults()}}>
+        <Link to="/search"><IconBody onClick={() => {getSearchResults(addressData, updateAddressData)}}>
           <Icon />
         </IconBody></Link>
       </SearchItem>

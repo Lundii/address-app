@@ -1,5 +1,10 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { SearchItem, SearchInput, Icon, IconBody} from '../../components/homeComponents/styedHome'
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+`
 
 export const HeaderContainer = styled.div`
   height: 50px;
