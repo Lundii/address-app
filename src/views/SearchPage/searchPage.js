@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AddressContext } from '../../context/addressContext';
-import ResultCard from '../../components/ResultCard';
+import ResultCard from '../../components/resultCard';
+import Pagination from '../../components/pagination';
 import Header from '../../components/header';
 import { SearchContainer, SearchItems, Loading } from './styledSearchPage';
 
@@ -16,6 +17,7 @@ const SearchPage = () => {
 
       return (
         <ResultCard 
+          id={address.id}
           key={index}
           street={city_street[0]}
           city={city_street[1]}
@@ -27,12 +29,14 @@ const SearchPage = () => {
 
   let addresses; 
   if (queryResult && queryResult.docs) {
+    
     addresses = displayResult();
   }
 
   return (
     <SearchContainer>
-      <Header path="search"/>
+      <Header path="search" />
+      <Pagination />
         <SearchItems>
           {!addresses ? <Loading>Loading...</Loading> : addresses}
         </SearchItems>

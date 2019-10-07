@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { AddressContext } from '../../context/addressContext';
 import {HomeContainer, SearchInput, Items, Label, SearchItem, IconBody, Icon} from './styedHome';
@@ -6,6 +6,8 @@ import {HomeContainer, SearchInput, Items, Label, SearchItem, IconBody, Icon} fr
 const HomeComponent = (props) => {
    
   const [addressData, updateAddressData] = useContext(AddressContext);
+  
+  const { searchQuery } = addressData;
 
   const updateSearchQuery = (e) => {
     const { value } = e.target;
@@ -14,7 +16,6 @@ const HomeComponent = (props) => {
   };
 
   const getSearchResults = async () => {
-    const { searchQuery } = addressData;
     const response = await fetch(`https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=type:adres&q=${searchQuery}&start=0&rows=20&fq=*:*`);
     const addresses = await response.json();
     updateAddressData(prevState => ({...prevState, queryResult: {...addresses.response}}));
