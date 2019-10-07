@@ -7,7 +7,7 @@ export const SearchContainer = styled.div`
 `
 
 export const SearchItems = styled.div`
-  height: 88%;
+  height: 80%;
   width: 100%;
   overflow-y: scroll;
 `

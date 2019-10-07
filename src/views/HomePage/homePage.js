@@ -10,7 +10,7 @@ const HomePage = () => {
       <Header />
       <HomeComponents />
     </HomePageContainer>
-  )
-}
+  );
+};
 
 export default HomePage;
