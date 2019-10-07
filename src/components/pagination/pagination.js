@@ -11,14 +11,17 @@ const Pagination = () => {
   const {searchQuery, queryResult, page, itemsPerPage} = addressData;
   const totalPages = Math.floor(queryResult.numFound/itemsPerPage)
 
-    useEffect(() => {
-      const fetchData = async () => {
-        const response = await fetch(`https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=type:adres&q=${searchQuery}&start=${page}&rows=${itemsPerPage}&fq=*:*`);
-        const addresses = await response.json();
-        updateAddressData(prevState => ({...prevState, queryResult: {...addresses.response}}));
-      }
-      fetchData();
-    }, [page, itemsPerPage])
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log(page);
+      console.log(queryResult.numFound);
+      const response = await fetch(`https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=type:adres&q=${searchQuery}&start=${page}&rows=${itemsPerPage}&fq=*:*`);
+      const addresses = await response.json();
+      console.log(addresses);
+      updateAddressData(prevState => ({...prevState, queryResult: {...addresses.response}}));
+    }
+    fetchData();
+  }, [page, itemsPerPage])
 
   const handleChange = async (e, field) => {
     e.persist();
